@@ -18,7 +18,7 @@ public:
     {
         printf("Base(Base *obj)\n");
     }
-    Base(Base& obj) 
+    Base(const Base& obj)
     {
         printf("Base(Base &obj)\n");
     }
@@ -125,18 +125,21 @@ void func3(Base& obj)
 {
     printf("func3(Base& obj)\n");
 }
-Base func1() 
+Base Bfunc1() 
 {
+    printf("Bfunc1()\n");
     Base b1; 
     return b1;
 }
-Base* func2() 
+Base* Bfunc2() 
 { 
+    printf("Bfunc2()\n");
     Base *b1 = new Base();
     return b1;
 }
-Base& func3()
+Base& Bfunc3()
 {
+    printf("Bfunc3()\n");
     Base b1;
     return b1;
 }
@@ -158,4 +161,6 @@ int main()
     }
     delete b;
     */
+    unique_ptr<Base> b1(new Base());
+
 }
