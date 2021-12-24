@@ -108,7 +108,7 @@ public:
     {
         printf("void print2_5 in DESC\n");
     }
-    void someShit()
+    void someThing()
     {
 
     }
@@ -125,6 +125,6 @@ int main()
     */
     Base *b = new Desc();
     Desc *d = dynamic_cast<Desc*>(b);
-    d->someShit();
+    d->someThing();
     delete b;
 }
