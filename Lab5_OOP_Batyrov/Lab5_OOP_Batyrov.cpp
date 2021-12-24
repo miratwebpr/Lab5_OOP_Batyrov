@@ -39,6 +39,15 @@ public:
     {
         printf("void print2_2Help in BASE\n");
     }
+    void print2_3()
+    {
+        printf("void print2_3\n");
+        print2_3Help();
+    }
+    virtual void print2_3Help()
+    {
+        printf("void print2_3Help in BASE\n");
+    }
 };
 class Desc : public Base
 {
@@ -67,6 +76,10 @@ public:
     {
         printf("void print2_2Help in DESC\n");
     }
+    virtual void print2_3Help()
+    {
+        printf("void print2_3Help in DESC\n");
+    }
 };
 
 int main()
@@ -79,5 +92,5 @@ int main()
     delete b;
     */
     Desc desc;
-    desc.print2_2();
+    desc.print2_3();
 }
