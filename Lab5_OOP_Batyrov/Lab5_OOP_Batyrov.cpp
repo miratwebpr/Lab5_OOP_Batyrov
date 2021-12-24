@@ -30,6 +30,12 @@ public:
     {
         return "Base";
     }
+    virtual bool isA(string className)
+    {
+        if (className == "Base")
+            return true;
+        return false;
+    }
     void print2_2()
     {
         printf("void print2_2\n");
@@ -51,6 +57,10 @@ public:
     void print2_4()
     {
         printf("void print2_4 in BASE\n");
+    }
+    virtual void print2_5()
+    {
+        printf("void print2_5 in BASE\n");
     }
 };
 class Desc : public Base
@@ -76,6 +86,12 @@ public:
     {
         return "Desc";
     }
+    virtual bool isA(string className)
+    {
+        if (className == "Desc")
+            return true;
+        return false;
+    }
     void print2_2Help()
     {
         printf("void print2_2Help in DESC\n");
@@ -87,6 +103,10 @@ public:
     void print2_4()
     {
         printf("void print2_4 in DESC\n");
+    }
+    virtual void print2_5()
+    {
+        printf("void print2_5 in DESC\n");
     }
 };
 
@@ -100,6 +120,7 @@ int main()
     delete b;
     */
     Base *b = new Desc();
-    b->print2_4();
+    if(b->isA("Base") == true) printf("b->isA(Base) = true\n");
+    else printf("b->isA(Base) = false\n");
     delete b;
 }
