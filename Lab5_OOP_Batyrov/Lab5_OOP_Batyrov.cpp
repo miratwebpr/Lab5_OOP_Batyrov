@@ -110,10 +110,21 @@ public:
     }
     void someThing()
     {
-
+        printf("someThing()\n");
     }
 };
-
+void func1(Base obj)
+{
+    printf("func1(Base obj)\n");
+}
+void func2(Base* obj)
+{
+    printf("func2(Base* obj)\n");
+}
+void func3(Base& obj)
+{
+    printf("func3(Base& obj)\n");
+}
 int main()
 {
     setlocale(LC_ALL, "ru");
@@ -123,10 +134,15 @@ int main()
     cout << out << endl;
     delete b;
     */
+    /*
     Base *b = new Desc();
     if (b->isA("Base")) {
         Desc* d = dynamic_cast<Desc*>(b);
         d->someThing();
     }
     delete b;
+    */
+    Base *b2 = new Base();
+    func2(b2);
+    delete b2;
 }
