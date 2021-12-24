@@ -2,9 +2,14 @@
 
 #include "stdio.h"
 #include <conio.h>
+#include <iostream>
+#include <memory>
+#include <cstring>
+#include <typeinfo>
+using namespace std;
 class Base
 {
-protected:
+public:
     Base()
     {
         printf("Base()\n");
@@ -17,13 +22,27 @@ protected:
     {
         printf("Base(Base &obj)\n");
     }
-    ~Base()
+    virtual ~Base()
     {
         printf("~Base()\n");
+    }
+    virtual string getclassName()
+    {
+        return "Base";
+    }
+    void print2_2()
+    {
+        printf("void print2_2\n");
+        print2_2Help();
+    }
+    void print2_2Help()
+    {
+        printf("void print2_2Help in BASE\n");
     }
 };
 class Desc : public Base
 {
+public:
     Desc() :Base()
     {
         printf("Desc()\n");
@@ -40,8 +59,25 @@ class Desc : public Base
     {
         printf("~Desc()\n");
     }
+    virtual string getclassName()
+    {
+        return "Desc";
+    }
+    void print2_2Help()
+    {
+        printf("void print2_2Help in DESC\n");
+    }
 };
+
 int main()
 {
-    
+    setlocale(LC_ALL, "ru");
+    /*
+    Base *b = new Desc();
+    string out = b->getclassName();
+    cout << out << endl;
+    delete b;
+    */
+    Desc desc;
+    desc.print2_2();
 }
