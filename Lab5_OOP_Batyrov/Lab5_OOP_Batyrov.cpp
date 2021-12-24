@@ -124,7 +124,9 @@ int main()
     delete b;
     */
     Base *b = new Desc();
-    Desc *d = dynamic_cast<Desc*>(b);
-    d->someThing();
+    if (b->isA("Base")) {
+        Desc* d = dynamic_cast<Desc*>(b);
+        d->someThing();
+    }
     delete b;
 }
