@@ -108,6 +108,10 @@ public:
     {
         printf("void print2_5 in DESC\n");
     }
+    void someShit()
+    {
+
+    }
 };
 
 int main()
@@ -120,7 +124,7 @@ int main()
     delete b;
     */
     Base *b = new Desc();
-    if(b->isA("Desc") == true) printf("b->isA(Desc) = true\n");
-    else printf("b->isA(Base) = false\n");
+    Desc *d = dynamic_cast<Desc*>(b);
+    d->someShit();
     delete b;
 }
