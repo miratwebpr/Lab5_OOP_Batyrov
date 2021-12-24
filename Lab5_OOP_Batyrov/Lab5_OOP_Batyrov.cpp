@@ -48,6 +48,10 @@ public:
     {
         printf("void print2_3Help in BASE\n");
     }
+    void print2_4()
+    {
+        printf("void print2_4 in BASE\n");
+    }
 };
 class Desc : public Base
 {
@@ -80,6 +84,10 @@ public:
     {
         printf("void print2_3Help in DESC\n");
     }
+    void print2_4()
+    {
+        printf("void print2_4 in DESC\n");
+    }
 };
 
 int main()
@@ -91,6 +99,7 @@ int main()
     cout << out << endl;
     delete b;
     */
-    Desc desc;
-    desc.print2_3();
+    Base *b = new Desc();
+    b->print2_4();
+    delete b;
 }
