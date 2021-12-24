@@ -120,7 +120,7 @@ int main()
     delete b;
     */
     Base *b = new Desc();
-    if(b->isA("Base") == true) printf("b->isA(Base) = true\n");
+    if(b->isA("Desc") == true) printf("b->isA(Desc) = true\n");
     else printf("b->isA(Base) = false\n");
     delete b;
 }
