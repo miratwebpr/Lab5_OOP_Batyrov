@@ -161,6 +161,7 @@ int main()
     }
     delete b;
     */
-    unique_ptr<Base> b1(new Base());
+    shared_ptr<Base> b1(new Base());
+    shared_ptr<Base> b2(b1);
 
 }
