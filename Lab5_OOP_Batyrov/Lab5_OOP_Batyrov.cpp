@@ -125,6 +125,22 @@ void func3(Base& obj)
 {
     printf("func3(Base& obj)\n");
 }
+Base func1() 
+{
+    Base b1; 
+    return b1;
+}
+Base* func2() 
+{ 
+    Base *b1 = new Base();
+    return b1;
+}
+Base& func3()
+{
+    Base b1;
+    return b1;
+}
+
 int main()
 {
     setlocale(LC_ALL, "ru");
@@ -142,7 +158,4 @@ int main()
     }
     delete b;
     */
-    Base *b2 = new Base();
-    func2(b2);
-    delete b2;
 }
